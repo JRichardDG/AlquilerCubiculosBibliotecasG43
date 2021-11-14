@@ -1,0 +1,258 @@
+<!DOCTYPE html>
+<html lang="es-ES">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cabinas Biblioteca</title>
+    
+    <!-- Iconos -->
+	
+	<link href="Css/font-awesome.min.css" rel="stylesheet">
+    
+    <!-- Extras CSS -->
+
+	<link rel="stylesheet" href="Css/bootstrap.css">
+    <link rel="stylesheet" href="Css/Mainstyles.css">
+   
+   
+    <!-- Extras JS -->
+
+    <script src="js/jquery.min.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+    <script src="js/Jsdocument.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+</head>
+<body>
+    <section class="nav-bar">
+        <header class="encabezado navbar-fixed-top" role="banner">
+            <div class="container">
+                <a href="Index.html" class="logo"><img src="imgs/magnifying-glass-and-book.png" alt="Logo"></a>
+                <button type="button" class="boton-menu hidden-md-up" data-toggle="collapse" data-target="#menu-principal" aria-expanded="false"><i class="fa fa-bars" aria-hidden="true"></i></button>
+                <nav id="menu-principal" class="collapse">
+                    <ul class="ulcolapsable">
+                        <li class="active"><a href="index.html">Inicio</a></li>
+                        <li><button type="button" class="btn-consul" data-toggle="collapse" data-target="#form-consul" aria-expanded="false">Consultar</button></li>
+                        <li><button type="button" class="btn-add-upd" data-toggle="collapse" data-target="#form-au" aria-expanded="false">Agregar o Actualizar</button></li>
+                        <li><button type="button" class="btn-delete" data-toggle="collapse" data-target="#form-d" aria-expanded="false">Borrar</button></li>
+                    </ul>
+                </nav>
+                <nav id="menu-principal2" class="hidden-md-down">
+                    <ul>
+                        <li class="active"><button type="button"><a href="index.html">Inicio</a></button></li>
+                        <li><button type="button" class="btn-consul" data-toggle="collapse" data-target="#form-consul" aria-expanded="false">Consultar</button></li>
+                        <li><button type="button" class="btn-add-upd" data-toggle="collapse" data-target="#form-au" aria-expanded="false">Agregar o Actualizar</button></li>
+                        <li><button type="button" class="btn-delete" data-toggle="collapse" data-target="#form-d" aria-expanded="false">Borrar</button></li>
+                    </ul>
+                </nav>
+            </div>
+        </header>
+    </section>    
+    
+    <div class="Separador">
+        <h3>Aplicativo para consulta y actualización</h3>
+        &nbsp;
+    </div>
+
+    <div id="form-consul" class="collapse">
+       <div class="form-consul">
+        <button class="btn btn-secondary btn-sm" type="button" data-toggle="collapse" data-target="#form-C-Cubiculo" aria-expanded="false"><p>Consular Cubiculo</p></button>
+        <button class="btn btn-secondary btn-sm" type="button" data-toggle="collapse" data-target="#form-C-cliente" aria-expanded="false"><p>Consultar cliente</p></button>
+        <button class="btn btn-secondary btn-sm" type="button" data-toggle="collapse" data-target="#form-C-mensaje" aria-expanded="false"><p>consultar mensaje</p></button>
+       </div>
+
+    </div>
+    <div id="form-C-Cubiculo" class="collapse">
+        <fieldset>
+            <div>
+            <h5>Datos a consultar:</h5>
+            <button id="btnconsultar" onclick="traerlibreria()"><i class="fa fa-search" aria-hidden="true"></i></i><p>Consultar</p></button>
+            </div>
+            <div id="resultadolibreria"></div>
+        </fieldset>
+    </div>
+
+    <div id="form-C-cliente" class="collapse">
+        <fieldset>
+            <div>
+            <h5>Datos a consultar:</h5>
+            <table class="table">
+            <tr>
+                <th scope="row">ID:</th> 
+                <td><input id="codigo" type="number" placeholder="Digite el Codigo"></td> 
+               </tr>            
+            </table>
+            <button id="btnconsultarid" onclick=""><i class="fa fa-search" aria-hidden="true"></i><p>Consultar por ID</p></button>
+            <button id="btnconsultar" onclick=""><i class="fa fa-search" aria-hidden="true"></i><p>Consultar Todo</p></button>
+            </div>
+            <div id="resultado"></div>
+        </fieldset>
+    </div>
+
+    <div id="form-C-mensaje" class="collapse">
+        <fieldset>
+            <div>
+            <h5>Datos a consultar:</h5>
+            <table class="table">
+            <tr>
+                <th scope="row">ID:</th> 
+                <td><input id="codigo" type="number" placeholder="Digite el Codigo"></td> 
+               </tr>            
+            </table>
+            <button id="btnconsultar" onclick="" ><i class="fa fa-search" aria-hidden="true"></i><p>Consultar Todo</p></button>
+            </div>
+            <div id="resultado"></div>
+        </fieldset>
+    </div>
+    
+    <div id="form-au" class="collapse">
+        <div class="form-au">
+            <button class="btn btn-secondary btn-sm" type="button" data-toggle="collapse" data-target="#form-au-Cubiculo" aria-expanded="false"><p>Agregar o actualizar un Cubiculo</p></button>
+            <button class="btn btn-secondary btn-sm" type="button" data-toggle="collapse" data-target="#form-au-cliente" aria-expanded="false"><p>Agregar o actualizar cliente</p></button>
+            <button class="btn btn-secondary btn-sm" type="button" data-toggle="collapse" data-target="#form-au-mensaje" aria-expanded="false"><p>Agregar o actualizar mensaje</p></button>
+           </div>
+    </div>
+
+    <div id="form-au-Cubiculo" class="collapse">
+        <fieldset>
+            <div>
+                <h5>Datos a agregar o actualizar:</h5>
+                <table class="table">
+                <tr>
+                    <th scope="row">ID:</th> 
+                    <td><input id="id" type="number" placeholder="Digite el Codigo"></td> 
+                </tr>
+                <tr>
+                    <th scope="row">Objetivo:</th> 
+                    <td><input id="target" type="text" placeholder="Escribe el Objetivo"></td> 
+                </tr>
+                <tr>
+                    <th scope="row">Capcidad:</th> 
+                    <td><input id="capacity" type="number" placeholder="Digite la cantidad"></td> 
+                </tr>
+                <tr>
+                    <th scope="row">Nº Categoria:</th> 
+                    <td><input id="category_id" type="number" placeholder="Digite el Numero de Categoria"></td> 
+                </tr>
+                <tr>
+                    <th scope="row">Nombre:</th> 
+                    <td><input id="name" type="text" placeholder="Escribe el Nombre"></td> 
+                </tr>                        
+                </table>
+                <button id="btnGuardar" onclick="guardarlibreria()" ><i class="fa fa-plus-square" aria-hidden="true"></i><p>Agregar</p></button>
+                <button id="btnGuardar" onclick="editarlibreria()" ><i class="fa fa-refresh" aria-hidden="true"></i><p>Actualizar</p></button>
+                </div>
+            <div id="resultadolibreria"></div>
+        </fieldset>
+    </div>
+
+    <div id="form-au-cliente" class="collapse">
+        <fieldset>
+            <div>
+                <h5>Datos a agregar o actualizar:</h5>
+                <table class="table">
+                    <tr>
+                        <th scope="row">ID:</th> 
+                        <td><input id="codigo" type="number" placeholder="Digite el Codigo"></td> 
+                    </tr>
+                    <tr>
+                        <th scope="row">Nombre:</th> 
+                        <td><input id="name" type="text" placeholder="Escribe el Nombre"></td> 
+                    </tr>  
+                    <tr>
+                        <th scope="row">E-mail:</th> 
+                        <td><input id="email" type="text" placeholder="Escribe el Correo"></td> 
+                    </tr>
+                    <tr>
+                        <th scope="row">Edad:</th> 
+                        <td><input id="edad" type="number" placeholder="Digite la Edad"></td> 
+                    </tr>
+                    </table>
+            <button id="btnGuardar" onclick="" ><i class="fa fa-plus-square" aria-hidden="true"></i><p>Agregar</p></button>
+            <button id="btnGuardar" onclick="" ><i class="fa fa-refresh" aria-hidden="true"></i><p>Actualizar</p></button>
+            </div>
+            <div id="resultado"></div>
+        </fieldset>
+    </div>
+
+    <div id="form-au-mensaje" class="collapse">
+        <fieldset>
+            <div>
+                <h5>Datos a agregar o actualizar:</h5>
+            <table class="table">
+            <tr>
+                <th scope="row">ID:</th> 
+                <td><input id="codigo" type="number" placeholder="Digite el Codigo"></td> 
+            </tr>
+            <tr>
+                <th scope="row">Mensaje:</th> 
+                <td><textarea name="Escribe el Mensaje" id="mensaje" cols="22" rows="10"></textarea></td> 
+            </tr>               
+            </table>
+            <button id="btnGuardar" onclick="" ><i class="fa fa-plus-square" aria-hidden="true"></i><p>Agregar</p></button>
+            <button id="btnGuardar" onclick="" ><i class="fa fa-refresh" aria-hidden="true"></i><p>Actualizar</p></button>
+            </div>
+            <div id="resultado"></div>
+        </fieldset>
+    </div>
+
+    <div id="form-d" class="collapse">
+        <div class="form-d">
+            <button class="btn btn-secondary btn-sm" type="button" data-toggle="collapse" data-target="#form-d-Cubiculo" aria-expanded="false"><p>Eliminar Cubiculo</p></button>
+            <button class="btn btn-secondary btn-sm" type="button" data-toggle="collapse" data-target="#form-d-cliente" aria-expanded="false"><p>Eliminar cliente</p></button>
+            <button class="btn btn-secondary btn-sm" type="button" data-toggle="collapse" data-target="#form-d-mensaje" aria-expanded="false"><p>Eliminar mensaje</p></button>
+           </div>
+    
+    </div>
+
+    <div id="form-d-Cubiculo" class="collapse">
+        <fieldset>
+            <div>
+                <h5>Cubiculo a Borrar:</h5>
+                <table class="table">
+                <tr>
+                    <th scope="row">ID:</th> 
+                    <td><input id="id" type="number" placeholder="Digite el Codigo"></td> 
+                </tr>                       
+                </table>
+                <button id="btnEliminar" onclick="borrarLibreria()"><i class="fa fa-trash" aria-hidden="true"></i><p>Eliminar</p></button>
+                </div>
+            <div id="resultadolibreria"></div>
+        </fieldset>
+    </div>
+
+    <div id="form-d-cliente" class="collapse">
+        <fieldset>
+            <div>
+                <h5>Cliente a borrar</h5>
+                <table class="table">
+                    <tr>
+                        <th scope="row">ID:</th> 
+                        <td><input id="codigo" type="number" placeholder="Digite el Codigo"></td> 
+                    </tr>
+                    </table>
+                    <button id="btnEliminar" onclick=""><i class="fa fa-trash" aria-hidden="true"></i><p>Eliminar</p></button>
+            </div>
+            <div id="resultado"></div>
+        </fieldset>
+    </div>
+
+    <div id="form-d-mensaje" class="collapse">
+        <fieldset>
+            <div>
+                <h5>Mensaje a Borrar:</h5>
+            <table class="table">
+            <tr>
+                <th scope="row">ID:</th> 
+                <td><input id="codigo" type="number" placeholder="Digite el Codigo"></td> 
+            </tr>        
+            </table>
+            <button id="btnEliminar" onclick=""><i class="fa fa-trash" aria-hidden="true"></i><p>Eliminar</p></button>
+            </div>
+            <div id="resultado"></div>
+        </fieldset>
+    </div>
+    
+    
+</body>
+</html>

@@ -1,0 +1,105 @@
+html{
+    font-size: 18px;
+}
+body{
+    background-color: rgb(255, 255, 255) ;
+    background: url("../imgs/Recurso\ 1.png") repeat center top;
+    background-size: cover;
+}
+
+.Separador{
+    background: url("../imgs/IMGbannerseparador.png") no-repeat center bottom;
+    background-size:cover;
+    height: 80vh;
+    padding: 0;
+    margin: 0;
+}
+.Separador h3{
+    color: white;
+    align-content: center;
+}
+.container{
+    
+    display: flex;
+    align-items: center;
+    flex-direction: row;
+    justify-content: space-between;
+    flex-wrap: wrap;
+}
+.caja1 {
+background-color: rgba(13, 49, 44, 0.623);
+}
+.caja2{
+    background-color: cadetblue;
+}
+nav{
+   color: black;
+}
+.encabezado{
+    background-color: white;
+}
+.encabezado .logo img {
+    width: 5rem;
+    height: auto; 
+}
+.ulnocolap {
+    display: flex;
+    flex-direction: row;
+    background-color: rgb(196, 124, 124);
+    align-items: center;
+}
+
+li{
+    list-style: none;
+    margin: auto;
+    padding: inherit;
+}
+#menu-principal2 a{
+    margin: 0 0.3rem;
+    padding: 1rem;
+    display: flex;
+}
+
+#menu-principal2 ul{
+    display: flex;
+    align-items: center;
+}
+
+button{
+    border: 0rem;
+    background-color: transparent;
+    align-items: center;
+}
+
+.form-consul .form-au .form-d button p{
+    display: flex;
+    margin-top: 5rem;
+    flex-wrap: wrap;
+    margin: auto;
+    padding: inherit;
+
+}
+
+.form-consul {
+    display: flex;
+    justify-content: space-evenly;
+    flex-wrap: wrap;
+}
+.form-au{
+    display: flex;
+    justify-content: space-evenly;
+    flex-wrap: wrap;
+} 
+
+.form-d{
+    display: flex;
+    justify-content: space-evenly;
+    flex-wrap: wrap;
+}
+
+fieldset {
+    min-width: 1rem;
+    padding: 1rem; 
+    margin: 1rem; 
+    border: 1rem; 
+}

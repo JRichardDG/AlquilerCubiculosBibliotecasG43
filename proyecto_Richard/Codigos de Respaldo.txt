@@ -1,0 +1,11 @@
+<button id="btnEliminar" onclick=""><i class="fa fa-trash" aria-hidden="true"></i><p>Eliminar</p></button>
+<button id="btnEditar" onclick=""><i class="fa fa-pencil-square-o" aria-hidden="true"></i><p>Editar</p></button>
+<button id="btnLimpiar" onclick=""><i class="fa fa-refresh" aria-hidden="true"></i><p>Limpiar</p></button>
+<h7>Para consultar todos los datos deje vacio los espacios</h7>
+            <table class="table">
+            
+               <tr>
+                   <th scope="row">ID:</th> 
+                   <td><input id="codigo" type="number" placeholder="Digite el Codigo"></td> 
+               </tr>            
+            </table>
